@@ -8,53 +8,33 @@ class Program
         string userInput = Console.ReadLine();
         int percent = int.Parse(userInput);
 
-        if (percent >= 93)
+        if (percent >= 90)
         {
             Console.WriteLine("Your grade is A. ");
         }
-        else if (percent >= 90)
-        {
-            Console.WriteLine("Your grade is A-. ");
-        }
-        else if (percent >= 87)
-        {
-            Console.WriteLine("Your grade is B+. ");
-        }
-        else if (percent > 83)
+        else if (percent >= 80)
         {
             Console.WriteLine("Your grade is B. ");
         }
-        else if (percent >= 80)
-        {
-            Console.WriteLine("Your grade is B-. ");
-        }
-        else if (percent >= 77)
-        {
-            Console.WriteLine("Your grade is C+. ");
-        }
-        else if (percent > 73)
+        else if (percent >= 70)
         {
             Console.WriteLine("Your grade is C. ");
         }
-        else if (percent >= 70)
-        {
-            Console.WriteLine("Your grade is C-. ");
-        }
-        else if (percent >= 67)
-        {
-            Console.WriteLine("Your grade is D+. ");
-        }
-        else if (percent > 63)
-        {
-            Console.WriteLine("Your grade is D. ");
-        }
         else if (percent >= 60)
         {
-            Console.WriteLine("Your grade is D-. ");
+            Console.WriteLine("Your grade is D. ");
         }
         else
         {
             Console.WriteLine("Your grade is F.");
+        }
+        if (percent >= 70)
+        {
+            Console.WriteLine("Congratulations! You passed the calss!");
+        }
+        else
+        {
+            Console.WriteLine("Better Luck next time!");
         }
     }
 }
