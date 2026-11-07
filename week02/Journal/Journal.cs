@@ -10,14 +10,14 @@ public class Journal
     public static void AddEntry()
     {
         Console.WriteLine("");
-        Entry _newEntry = new Entry();
+        Entry newEntry = new Entry();
         PromptGenerator _promptText = new PromptGenerator();
-        _newEntry._promptText = PromptGenerator.GetRandomPrompt();
-        Console.WriteLine($"{_newEntry._promptText}");
-        _newEntry._entryText = Console.ReadLine();
-        _newEntry._date = DateTime.Today.ToString("d");
+        newEntry._promptText = PromptGenerator.GetRandomPrompt();
+        Console.WriteLine($"{newEntry._promptText}");
+        newEntry._entryText = Console.ReadLine();
+        newEntry._date = DateTime.Today.ToString("d");
 
-        _entries.Add(_newEntry);
+        _entries.Add(newEntry);
         Console.WriteLine("");
     }
 
@@ -65,12 +65,12 @@ public class Journal
             {
                 entryText = line;
 
-                Entry _newEntry = new Entry();
-                _newEntry._date = date;
-                _newEntry._promptText = promptText;
-                _newEntry._entryText = entryText;
+                Entry newEntry = new Entry();
+                newEntry._date = date;
+                newEntry._promptText = promptText;
+                newEntry._entryText = entryText;
 
-                _entries.Add(_newEntry);
+                _entries.Add(newEntry);
 
                 number = 0;
             }
