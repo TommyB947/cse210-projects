@@ -9,6 +9,8 @@ using System.Security.Cryptography.X509Certificates;
 //This will allow the user to check themselves when they think they have it down. 
 //It also allows the user to try memorizing it again the right way if they were wrong before. 
 //I also added functionality so that you can press any keys you want and it will step you forward in the program, and only when you type quit specifically will it close the program. 
+//There is a dual purpose as well for the numebr of time you need to click enter to underscore the entire verse. 
+//I both don't need to add extra logic and it forces the user to repeat the scripture many more times than normal. 
 
 class Program
 {
@@ -29,34 +31,7 @@ class Program
             stop = Console.ReadLine();
             Console.Clear();
             
-            int num = scripture1._words.Count() + 1;
-            
-            int randomNumber = Random.Shared.Next(1, num);
-            
-            if (scripture1.IsCompletlyHidden() == false)
-            {
-                scripture1.HideRandomWords(randomNumber - 1);
-            }
-
-            randomNumber = Random.Shared.Next(1, num);
-            if (scripture1.IsCompletlyHidden() == false)
-            {
-                scripture1.HideRandomWords(randomNumber - 1);
-            }
-
-            randomNumber = Random.Shared.Next(1, num);
-            if (scripture1.IsCompletlyHidden() == false)
-            {
-                scripture1.HideRandomWords(randomNumber - 1); 
-            }
-            
-            if (scripture1.IsCompletlyHidden() == true)
-            {
-                for (int i = 0; i < scripture1._words.Count; i++)
-                {
-                    scripture1._words[i].Show();
-                }
-            }
+            scripture1.HideRandomWords(3);
         }
     }
 }

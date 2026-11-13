@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 class Scripture
 {
     private string _reference;
-    public List<Word> _words = new List<Word>();
+    private List<Word> _words = new List<Word>();
 
 
 
@@ -28,7 +28,21 @@ class Scripture
 
     public void HideRandomWords(int numberToHide)
     {
-        _words[numberToHide].Hide();
+        int num = _words.Count() + 1;
+
+        for (int i = 1; i < numberToHide; i++)
+        {
+            int randomNumber = Random.Shared.Next(1, num) - 1;
+            _words[randomNumber].Hide();
+        }
+
+        if (IsCompletlyHidden() == true)
+            {
+                for (int i = 0; i < _words.Count; i++)
+                {
+                    _words[i].Show();
+                }
+            }
     }
 
     public string GetDisplayText()
@@ -41,7 +55,7 @@ class Scripture
         return text;
     }
 
-    public bool IsCompletlyHidden()
+    private bool IsCompletlyHidden()
     {
         for (int i = 0; i < _words.Count; i++)
         {
