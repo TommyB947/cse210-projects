@@ -3,6 +3,13 @@ using System.Globalization;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 
+//Exceeding the Requirements:
+//I added functionality so that the program will only close when you type quit. 
+//As your learning the scripture sometimes it's possible to memorize the wrong words in the scripture. 
+//This will allow the user to check themselves when they think they have it down. 
+//It also allows the user to try memorizing it again the right way if they were wrong before. 
+//I also added functionality so that you can press any keys you want and it will step you forward in the program, and only when you type quit specifically will it close the program. 
+
 class Program
 {
     static void Main(string[] args)
