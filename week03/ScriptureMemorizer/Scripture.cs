@@ -33,15 +33,16 @@ class Scripture
         for (int i = 1; i < numberToHide; i++)
         {
             int randomNumber = Random.Shared.Next(1, num) - 1;
+            while (_words[randomNumber].IsHidden() == true)
+            {
+                randomNumber = Random.Shared.Next(1, num) - 1;
+            }
             _words[randomNumber].Hide();
         }
 
         if (IsCompletlyHidden() == true)
             {
-                for (int i = 0; i < _words.Count; i++)
-                {
-                    _words[i].Show();
-                }
+                Environment.Exit(0);
             }
     }
 
