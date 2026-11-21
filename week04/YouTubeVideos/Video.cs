@@ -74,4 +74,11 @@ class Video
         //Console.WriteLine($"{videoText}"); 
         return videoText;
     }
+
+    public int GetCommentCount()
+    {
+        int count;
+        count = _comments.Count();
+        return count;
+    }
 }
